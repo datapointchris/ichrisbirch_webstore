@@ -2,4 +2,4 @@
 
 import sys 
 sys.path.insert(0, '/var/www/html/webstore')
-from orders_app import app as application
+from webstore.app import app as application
