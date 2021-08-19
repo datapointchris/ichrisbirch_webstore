@@ -12,12 +12,10 @@ def index():
 def orders():
     if request.method == 'GET':
         return render_template('orders.html')
-    
+
     if request.method == 'POST':
         order = request.get_json
         print(order)
-        
-
 
 
 if __name__ == '__main__':
