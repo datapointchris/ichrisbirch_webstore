@@ -1,0 +1,28 @@
+{
+    "checkpointFile": "/opt/aws-kinesis-agent/run/checkpoints",
+    "cloudwatch.emitMetrics": true,
+    "kinesis.endpoint": "",
+    "firehose.endpoint": "",
+    "flows": [
+        {
+            "filePattern": "/var/log/apache2/access.log",
+            "deliveryStream": "webstore-access-logs",
+            "dataProcessingOptions": [
+                {
+                    "optionName": "LOGTOJSON",
+                    "logFormat": "COMMONAPACHELOG"
+                }
+            ]
+        },
+        {
+            "filePattern": "/var/log/apache2/error.log",
+            "deliveryStream": "webstore-error-logs",
+            "dataProcessingOptions": [
+                {
+                    "optionName": "LOGTOJSON",
+                    "logFormat": "APACHEERRORLOG"
+                }
+            ]
+        }
+    ]
+}
